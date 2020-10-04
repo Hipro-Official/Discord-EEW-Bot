@@ -1,6 +1,6 @@
 # Discord EEW Bot
 
-![PEP8 Test](https://github.com/Hipro-Official/Discord-Weather-Bot/workflows/PEP8%20Test/badge.svg)
+![PEP8 Test](https://github.com/Hipro-Official/Discord-EEW-Bot/workflows/PEP8%20Test/badge.svg)
 ![license](https://img.shields.io/badge/license-GPL--3.0-green)
 ![version](https://img.shields.io/badge/version-1.0.0-blue)
 <br>
