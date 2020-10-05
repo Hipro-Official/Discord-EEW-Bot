@@ -31,13 +31,23 @@ async def earthquakealert():
     channel = client.get_channel(int(channel_id_earthquake))
     embed = None
 
-    if earthquakeinfo['Status'] != '00':
-        return
+    try:
+        if earthquakeinfo['Status']['Code'] != '00':
+            print('In')
+            return
 
-    if earthquakeinfo['Title']['String'] == '緊急地震速報（警報）':
-        file, embed = createembed(earthquakeinfo)
-
-    await channel.send(file=file, embed=embed)
+        if (earthquakeinfo['Title']['String'] == '緊急地震速報（警報）'
+                and earthquakeinfo['MaxIntensity']['String'] == ('5弱'
+                                                                 or '5強'
+                                                                 or '6弱'
+                                                                 or '6強'
+                                                                 or '7')):
+            embed = createembed(6, '', '', '', '', earthquakeinfo)
+            await channel.send(embed=embed)
+    except Exception as e:
+        print('Error: ')
+        print(e)
+        pass
 
 # endregion
 
